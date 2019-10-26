@@ -9,8 +9,9 @@ module.exports = {
     devServer: {
         open: true,
         proxy: {
-            '/': {
+            '/api/': {
                 target: 'http://localhost:8001/',
+                pathRewrite: {'^/api' : ''},
                 ws: true,
                 changeOrigin: true
             },
@@ -30,4 +31,24 @@ module.exports = {
           },
         },
     },
+    // chainWebpack: config => {
+    //     config
+    //   .module
+    //   .rule('scss')
+    //   .use('sass-resources-loader')
+    //   .loader('sass-resources-loader')
+    //   .options({
+    //     resources: resolve('./src/style/common.scss'),
+    //   })
+    //   return config
+    // },
+    css: {
+        loaderOptions: {
+            sass: {
+              prependData: `
+                @import "./src/style/common.scss";
+              `
+            }
+        }
+    }
 }

@@ -83,7 +83,7 @@ class User extends BaseComponent{
 				})
 				return
 			}
-            const newpassword = this.encryption(password);
+            // const newpassword = this.encryption(password);
 			try{
 				const admin = await UserModel.findOne({username})
 				if (admin) {

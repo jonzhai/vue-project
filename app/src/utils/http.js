@@ -1,5 +1,6 @@
 import Axios from 'axios'
 let instance = Axios.create({
+    baseURL: '/api',
     timeout: 5000,
     // baseURL: 'https://api.example.com',
     headers: {
@@ -9,15 +10,11 @@ let instance = Axios.create({
   // http request 拦截器
 instance.interceptors.request.use(
     config => {
-      if (store.state.token) { // 判断是否存在token，如果存在的话，则每个http header都加上token
-        config.headers.authorization = '666'  //请求头加上token
-      }
+      // if (store.state.token) { // 判断是否存在token，如果存在的话，则每个http header都加上token
+      //   config.headers.authorization = '666'  //请求头加上token
+      // }
       return config
-    },
-    err => {
-      return Promise.reject(err)
     })
-
     // http response 拦截器
 instance.interceptors.response.use(
     response => {
@@ -35,10 +32,6 @@ instance.interceptors.response.use(
     //     }
     //   }
       return response
-    },
-    //接口错误状态处理，也就是说无响应时的处理
-    error => {
-      return Promise.reject(error.response) // 返回接口返回的错误信息
     })
 
     export default instance

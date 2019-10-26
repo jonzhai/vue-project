@@ -6,11 +6,11 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
 	id: Number,
+    username: String,
+    password: String,
 	phone: String,
 	user_id: Number,
 	created_at: {type: Date, default: Date.now()},
-    username: String,
-    password: String
 })
 
 userSchema.index({id: 1});

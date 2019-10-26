@@ -10,7 +10,11 @@ const routes = {
         {
             path: '/home',
             component: () => import('@/pages/home/')
-        }
+        },
+        {
+            path: '/login',
+            component: () => import('@/pages/author/login')
+        },
     ]
 }
 export default new vueRouter(routes)

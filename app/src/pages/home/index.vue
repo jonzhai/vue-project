@@ -9,7 +9,7 @@ export default {
     },
     methods: {
         _login() {
-            this.$axios.post('/author/login', {
+            Login({
                 username: '666',
                 password: '2131'
             }).then(oData => {
