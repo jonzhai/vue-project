@@ -1,5 +1,8 @@
 <template>
-    <div>ewrewr</div>
+    <div>
+        ewrewr
+        <i class="fa fa-camera-retro fa-lg"></i>
+    </div>
 </template>
 <script>
 import { Login } from  '@/api/author'

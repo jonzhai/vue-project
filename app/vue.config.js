@@ -47,6 +47,7 @@ module.exports = {
             sass: {
               prependData: `
                 @import "./src/style/common.scss";
+                @import "./src/style/var.scss";
               `
             }
         }
