@@ -8,17 +8,16 @@
 import { Login } from  '@/api/author'
 export default {
     created() {
-        this._login()
+    },
+    mounted() {
+        this.$tips()
+        // this.$dialog().then(() => {
+        //    alert(1)
+        // }).catch(() => {
+        //     console.log(666)
+        // })
     },
     methods: {
-        _login() {
-            Login({
-                username: '666',
-                password: '2131'
-            }).then(oData => {
-                console.log(oData)
-            })
-        }
     }
 }
 </script>

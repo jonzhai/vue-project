@@ -38,19 +38,23 @@ export default {
         }
     },
     mounted() {
-        let loading = this.$loading()
+       
         // setTimeout(() => {
         //     loading.close()
         // }, 3000)
     },
     methods: {
         login() {
-            Login({
-                username: this.username,
-                password: this.password
-            }).then(odata => {
-                console.log(odata)
-            })
+          let loading =  this.$loading(1)
+          loading.open().then(() => {
+              Login({
+                  username: this.username,
+                  password: this.password
+              }).then(odata => {
+                //   loading.close()
+                  console.log(odata)
+              })
+          })
         }
     }
 }
@@ -67,6 +71,7 @@ export default {
             padding: 0 px2rem(30);
             input{
                 border: 1px solid #999;
+                padding: 0 10px;
             }
             &.username-container{
                 margin-bottom: px2rem(30);

@@ -7,10 +7,8 @@ import router from './router'
 import http from './utils/http'
 import axios from 'axios'
 import FastClick from 'fastclick'
-import Loading from './components/loading'
-Vue.prototype.$loading = () => {
-  return new Loading()
-}
+import globalComponetns from '@/utils/registGlobalComponents'
+Vue.use(globalComponetns)
 
 Vue.prototype.$axios = axios
 FastClick.attach(document.body);
